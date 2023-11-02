@@ -54,7 +54,6 @@ export const FoodList = () => {
   }, []);
 
   const viewReport = (fdcId: number) => {
-    console.log('xxx dataItem ', fdcId);
     window.open(`/food/${fdcId}/view`, '_blank');
   };
 
@@ -68,7 +67,6 @@ export const FoodList = () => {
     setFilterValue(ev.value);
     let newData = foodList.filter((item: any) => {
       let match = false;
-      console.log('xxx item ', item)
 
       const valueExists = (obj: any, value: any) => Object.keys(obj).some((key) => obj[key] === value);
       if (valueExists(item, val)) {
