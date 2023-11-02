@@ -1,10 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getFood } from '../services/food';
-import foodListMockData from '../mock-data/food-list.json';
-import { Label } from "@progress/kendo-react-labels";
-import { Input } from "@progress/kendo-react-inputs";
-
 export const FoodView = () => {
     const { id } = useParams<any>();
     const [ foodView, setFoodView ] = useState<any>({});
@@ -29,25 +22,29 @@ export const FoodView = () => {
     // We can use grid here as well or also the other kendo-ui component.
     return(
         <>
+        <form>
             <h2>Food View list</h2>
-            <Label editorId='number'>Number:&nbsp;</Label>
-            <Input id='number' value={foodView.number}></Input>
+            <div>
+                <Label editorId='number'>Number: {foodView.number}</Label>
+            </div>
 
-            <Label editorId='name'>Name:&nbsp;</Label>
-            <Input id='name' value={foodView.name}></Input>
+            <div>
+                <Label editorId='name'>Name: {foodView.name}</Label>
+            </div>
 
-            <Label editorId='number'>Amount:&nbsp;</Label>
-            <Input id='amount' value={foodView.amount}></Input>
+            <div>
+                <Label editorId='number'>Amount: {foodView.amount}</Label>
+            </div>
 
-            <Label editorId='unitName'>Unit Name:&nbsp;</Label>
-            <Input id='unitName' value={foodView.unitName}></Input>
+            <div>       
+                <Label editorId='unitName'>Unit Name: {foodView.unitName}</Label>
+            </div>
 
-            <Label editorId='derivationCode'>Derivation Code:&nbsp;</Label>
-            <Input id='derivationCode' value={foodView.derivationCode}></Input>
+            <div> 
+                <Label editorId='derivationCode'>Derivation Code: {foodView.derivationCode}</Label>
+            </div>
 
-            <Label editorId='derivationDescription'>Derivation Description:&nbsp;</Label>
-            <Input id='derivationDescription' value={foodView.derivationDescription}></Input>
-
-        </>
-    )
-}
+            <div> 
+                <Label editorId='derivationDescription'>Derivation Description: {foodView.derivationDescription}</Label>
+            </div>
+        </form>
